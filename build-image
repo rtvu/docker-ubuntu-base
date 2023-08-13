@@ -13,6 +13,8 @@ done
 shift "$((OPTIND-1))"
 
 if [[ "$VERBOSE" == "true" || "$VERBOSE_ALL" == "true" ]]; then
+  printf 'Building: "ubuntu-base"\n\n'
+
   docker build --file "$SCRIPT_DIRECTORY/Dockerfile" --pull --tag ubuntu-base "$SCRIPT_DIRECTORY"
 else
   docker build --quiet --file "$SCRIPT_DIRECTORY/Dockerfile" --pull --tag ubuntu-base "$SCRIPT_DIRECTORY"
